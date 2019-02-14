@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { Agent } from './agent';
 import { Result } from './result';
 
 @Injectable({
@@ -17,7 +16,6 @@ export class AgentsService {
   }
 
   getAgentDetails(id: string): Observable<Result> {
-    // TODO: fix Result.ts accordingly as angular is stupid
     return this.http.get<Result>(`https://devapi.ratemyagent.com.au/Agents/Code-${id}?getPromotedState=true`);
   }
 }

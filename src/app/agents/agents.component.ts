@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AgentsService } from './agents.service';
-// import { Agent } from './agent';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-agents',
