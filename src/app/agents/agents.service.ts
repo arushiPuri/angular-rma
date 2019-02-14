@@ -15,4 +15,9 @@ export class AgentsService {
   getAgents(): Observable<Result> {
     return this.http.get<Result>('https://devapi.ratemyagent.com.au/Sales/Locations/Cities/84/Agents?StatisticType=TotalRecommendations&skip=0&take=20');
   }
+
+  getAgentDetails(id: string): Observable<Result> {
+    // TODO: fix Result.ts accordingly as angular is stupid
+    return this.http.get<Result>(`https://devapi.ratemyagent.com.au/Agents/Code-${id}?getPromotedState=true`);
+  }
 }

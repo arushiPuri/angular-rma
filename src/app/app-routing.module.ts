@@ -6,7 +6,7 @@ import { DashboardComponent } from '../app/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: AgentsComponent },
-  { path: 'agent-details', component: AgentDetailsComponent },
+  { path: 'agent-details/:id', component: AgentDetailsComponent },
   { path: 'dashboard', component: DashboardComponent }
 ];
 

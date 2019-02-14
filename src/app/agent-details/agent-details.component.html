@@ -1,10 +1,8 @@
-<p>
-  agent-details works!
-</p>
-<nav>
-  <a routerLink="">Agent Names</a>
-</nav>
-
-<h1>Lets Test Details</h1>
-
-<div *ngFor='let agent of agents'> {{agent.AgentProfileId}} </div>
+<div class="details">
+  <h1> Name: {{agent.AgentName}} </h1>
+  <img src={{agent.Theme.AvatarImage}} /> <br><br>
+  Overall Stars: {{agent.OverallStars}} <br><br>
+  Contact Number: {{agent.About.Mobile}} <br><br>
+  Contact Number: {{agent.About.Address}} <br><br>
+  Summary: {{agent.About.Summary}}
+</div>

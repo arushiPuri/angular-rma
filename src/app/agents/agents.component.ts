@@ -17,7 +17,8 @@ export class AgentsComponent implements OnInit {
     this.agentsService.getAgents()
       .subscribe(response => {
         this.agents = response.Results;
-        console.log(this.agents[0]);
+        debugger;
+        console.log(this.agents);
       });
   }
 }

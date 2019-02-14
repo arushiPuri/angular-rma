@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgentsService } from '../agents/agents.service';
-import { Agent } from '../agents/agent';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-agent-details',
@@ -9,15 +9,20 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./agent-details.component.scss']
 })
 export class AgentDetailsComponent implements OnInit {
-  agents: Agent[];
+  agent = { Theme: { }, About: { } };
 
-  constructor(private agentsService: AgentsService) { }
+  constructor(private agentsService: AgentsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.agentsService.getAgents()
+    this.getAgent();
+  }
+
+  getAgent(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log(id, 'id laao');
+    this.agentsService.getAgentDetails(id)
       .subscribe(response => {
-        this.agents = response.Results;
-        console.log(this.agents[0]);
+        this.agent = response;
       });
   }
 
