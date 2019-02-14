@@ -1,7 +1,14 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div *ngFor='let agent of agents' class="agent">
 <a routerLink="/agent-details/{{agent.AgentCode}}" 
-   class="list agents" 
-   *ngFor='let agent of agents'> 
+   class="list agents"> 
    {{agent.Name}} 
-</a>
+</a><i (click)="deleteItem(agent)" class="material-icons">delete</i>
+</div>
+<div>
+    <input type="text" placeholder="Add Agent Name" name="AgentName" #AgentName ngModel>
+ <span (click)="addAgent(AgentName.value)">
+ <i class="material-icons">add</i></span>
+</div>
 
-
+      

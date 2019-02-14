@@ -9,9 +9,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./agent-details.component.scss']
 })
 export class AgentDetailsComponent implements OnInit {
-  agent = { Theme: { }, About: { } };
+  agent = { Theme: {}, About: {} };
 
-  constructor(private agentsService: AgentsService, private route: ActivatedRoute) { }
+  constructor(
+    private agentsService: AgentsService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.getAgent();
@@ -19,11 +22,8 @@ export class AgentDetailsComponent implements OnInit {
 
   getAgent(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id, 'id laao');
-    this.agentsService.getAgentDetails(id)
-      .subscribe(response => {
-        this.agent = response;
-      });
+    this.agentsService.getAgentDetails(id).subscribe(response => {
+      this.agent = response;
+    });
   }
-
 }
