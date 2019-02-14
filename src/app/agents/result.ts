@@ -1,4 +1,4 @@
-// export class Result {
-//     id: number;
-//     name: string;
-//   }
+export class Result {
+    id: number;
+    name: string;
+  }
